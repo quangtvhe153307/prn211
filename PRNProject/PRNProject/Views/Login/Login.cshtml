@@ -1,0 +1,51 @@
+﻿@{
+    Layout = "";
+}
+<!doctype html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <title>SMS - Students Management System</title>
+        <!-- Bootstrap-->
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+        <!-- Font Awesome Icon -->
+        <script src="https://kit.fontawesome.com/3c84cb624f.js" crossorigin="anonymous"></script>
+
+
+        <!--custom style-->
+        <link rel="stylesheet" href="~/css/StyleLogin.css">
+    </head>
+    <body>
+        <div class="header">
+            <a class="header-left"><img class="logo">LOGIN</a>
+            <a class="header-right">Need help?</a>
+        </div>
+        <div class="content">
+            <div class="login-container">
+                <form action="login/login" method="post">
+                    <h2>Login</h2>
+                    <div class="form-group">
+                        <label for="inputUsername">Username</label>
+                        <input type="text" class="form-control" id="inputUsername"  name="user" value="">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" name="pass" value="">
+                    </div>
+                    <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1" name="remember" value="on">
+                        <label class="form-check-label" for="exampleCheck1">Remember password</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Login</button>
+                    <a class="login" href="forgotpass">Forgot password?</a><br/>
+                    <div>Don't have account? <a class="signup" href="register">Sign up</a> now!</div>
+
+                </form>
+            </div></div>
+
+
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    </body>
+</html>

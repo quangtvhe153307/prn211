@@ -1,8 +1,74 @@
-﻿@*
+﻿@using PRNProject.Models
+@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
-@{
-}
-<div>
-    <img src="~/images/12a4.png"/>
+@model List<News>
+<link href="~/css/StyleHome.css" rel="stylesheet"/>
+<div class="row container-lg">
+    <div class="body-left col-md-5">
+        <div>
+            <div>
+                <h3>News</h3>
+                <ul>
+                  @foreach (News n in Model)
+                   {
+                       <li><a href="#"><span>@n.CreatedDate : </span>@n.Title</a></li>
+                   }
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="body-right col-md-7">
+        <div>
+                <div>
+                    <h3>Academic information</h3>
+                </div>
+                <div class="row">
+                <div class="col-md-6">
+                    <h4>Registration/Application</h4>
+                    <ul>
+                        <li><a href="">Suspend one semeter </a><span>(Xin bảo lưu)</span></li>
+                        <li><a href="">Withdraw </a><span>(Xin thôi học)</span></li>
+                        <li><a href="">Move out class </a><span>(Xin chuyển lớp)</span></li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h4>Information access</h4>
+                    <ul>
+                        <li><a href="">University timetable </a><span>(Lịch học)</span></li>
+                        <li><a href="">Weekly timetable </a><span>(Thời khóa biểu từng tuần)</span></li>
+                        <li><a href="">University timetable </a><span>Lịch học</span></li>
+                    </ul>
+                </div>
+                </div>
+                <div class="row">
+                                <div class="col-md-6">
+                    <h4>Feedbacks</h4>
+                    <ul>
+                        <li><a href="">Feedback about teaching </a><span>(Báo cáo về việc giảng dạy)</span></li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h4>Report</h4>
+                    <ul>
+                        <li><a href="">Attendance report </a><span>(Báo cáo điểm danh)</span></li>
+                        <li><a href="">Mark report </a><span>(Báo cáo điểm)</span></li>
+                        <li><a href="">Academic transcript </a><span>(Báo cáo điểm)</span></li>
+                    </ul>
+                </div>
+                </div>
+                <div  class="row">
+                                <div class="col-md-6">
+                    <h4>Other</h4>
+                    <ul>
+                        <li><a href="">Student profile </a><span></span></li>
+                        <li><a href="">Update profile </a><span></span></li>
+                        <li><a href="">View semeter </a><span>(Xem thông tin về học kỳ)</span></li>
+                        <li><a href="">View room </a><span>(Xem thông tin về phòng)</span></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
 </div>

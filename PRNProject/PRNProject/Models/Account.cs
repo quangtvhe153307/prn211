@@ -10,6 +10,7 @@ namespace PRNProject.Models
         public Account()
         {
             Instructors = new HashSet<Instructor>();
+            News = new HashSet<News>();
             Students = new HashSet<Student>();
         }
 
@@ -22,6 +23,7 @@ namespace PRNProject.Models
         public string Username { get; set; }
 
         public virtual ICollection<Instructor> Instructors { get; set; }
+        public virtual ICollection<News> News { get; set; }
         public virtual ICollection<Student> Students { get; set; }
     }
 }

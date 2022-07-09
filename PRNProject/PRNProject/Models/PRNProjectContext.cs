@@ -24,6 +24,7 @@ namespace PRNProject.Models
         public virtual DbSet<CourseSchedule> CourseSchedules { get; set; }
         public virtual DbSet<Department> Departments { get; set; }
         public virtual DbSet<Instructor> Instructors { get; set; }
+        public virtual DbSet<News> News { get; set; }
         public virtual DbSet<RollCallBook> RollCallBooks { get; set; }
         public virtual DbSet<Room> Rooms { get; set; }
         public virtual DbSet<Student> Students { get; set; }
@@ -175,6 +176,26 @@ namespace PRNProject.Models
                     .WithMany(p => p.Instructors)
                     .HasForeignKey(d => d.UserId)
                     .HasConstraintName("FK_INSTRUCTORS_ACCOUNTS");
+            });
+
+            modelBuilder.Entity<News>(entity =>
+            {
+                entity.ToTable("NEWS");
+
+                entity.Property(e => e.NewsId).HasColumnName("NewsID");
+
+                entity.Property(e => e.Context).HasColumnType("ntext");
+
+                entity.Property(e => e.CreatedDate).HasColumnType("datetime");
+
+                entity.Property(e => e.Title).HasColumnType("ntext");
+
+                entity.Property(e => e.UserId).HasColumnName("UserID");
+
+                entity.HasOne(d => d.User)
+                    .WithMany(p => p.News)
+                    .HasForeignKey(d => d.UserId)
+                    .HasConstraintName("fk_News_Accounts");
             });
 
             modelBuilder.Entity<RollCallBook>(entity =>

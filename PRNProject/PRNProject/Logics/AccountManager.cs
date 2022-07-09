@@ -16,9 +16,9 @@ namespace PRNProject.Logics
         {
             return context.Accounts.ToList();
         }
-        public Account GetAccount(int id)
+        public Account GetAccount(string username, string pass)
         {
-            return context.Accounts.FirstOrDefault(x => x.UserId == id);
+            return context.Accounts.FirstOrDefault(x => x.Username.Equals(username) && x.Password.Equals(pass));
         }
     }
 }
