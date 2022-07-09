@@ -1,0 +1,11 @@
+﻿nav.navbar.navbar-expand-lg {
+    background: pink;
+    height: 70px;
+}
+footer a {
+    text-decoration: none;
+    color: black;
+}
+footer{
+    background: pink;
+}
