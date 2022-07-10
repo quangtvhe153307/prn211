@@ -1,0 +1,14 @@
+﻿@using PRNProject.Models
+@model List<StudentCourse>
+<div>
+    @foreach (Term t in ViewBag.Terms)
+   {
+       <span>@t.TermName</span>
+   }
+</div>
+<div>
+    @foreach (StudentCourse sc in Model)
+   {
+       <span>@sc.Mark</span>
+   }
+</div>

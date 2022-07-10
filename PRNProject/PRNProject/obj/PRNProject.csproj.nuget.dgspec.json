@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Admin\\Desktop\\PRNProject\\PRNProject\\PRNProject\\PRNProject.csproj": {}
+    "C:\\Users\\Admin\\Desktop\\PRN20220710\\PRNProject\\PRNProject\\PRNProject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Admin\\Desktop\\PRNProject\\PRNProject\\PRNProject\\PRNProject.csproj": {
+    "C:\\Users\\Admin\\Desktop\\PRN20220710\\PRNProject\\PRNProject\\PRNProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\PRNProject\\PRNProject\\PRNProject\\PRNProject.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\PRN20220710\\PRNProject\\PRNProject\\PRNProject.csproj",
         "projectName": "PRNProject",
-        "projectPath": "C:\\Users\\Admin\\Desktop\\PRNProject\\PRNProject\\PRNProject\\PRNProject.csproj",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\PRN20220710\\PRNProject\\PRNProject\\PRNProject.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\Desktop\\PRNProject\\PRNProject\\PRNProject\\obj\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\PRN20220710\\PRNProject\\PRNProject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -20,10 +20,10 @@ namespace PRNProject
         {
             services.AddControllersWithViews();
             services.AddSession();
-            services.AddScoped<Authorize>(container =>
-            {
-                return new Authorize();
-            });
+            //services.AddScoped<Authorize>(container =>
+            //{
+            //    return new Authorize();
+            //});
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

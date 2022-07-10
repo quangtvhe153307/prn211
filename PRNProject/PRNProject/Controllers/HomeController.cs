@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using PRNProject.Filter;
 using PRNProject.Logics;
 using PRNProject.Models;
@@ -20,6 +22,8 @@ namespace PRNProject.Controllers
             ViewBag.Title = "Home";
             ViewBag.Test = studentManager.GetStudent(3);
             List<News> newList = newsManager.GetNews();
+            Account a = JsonConvert.DeserializeObject<Account>(HttpContext.Session.GetString("account"));
+            ViewBag.Id = a.UserId;
             return View(newList);
         }
         public IActionResult Login()

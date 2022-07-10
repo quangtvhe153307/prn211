@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using PRNProject.Logics;
 using PRNProject.Models;
 
@@ -19,6 +21,7 @@ namespace PRNProject.Controllers
                 return View("Error");
             } else
             {
+                HttpContext.Session.SetString("account", JsonConvert.SerializeObject(a));
                 return RedirectPermanent("~/home/home");
             }
         }
