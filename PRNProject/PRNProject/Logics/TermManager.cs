@@ -34,6 +34,7 @@ namespace PRNProject.Logics
                 .Join(context.StudentCourses, xy => xy.y.CourseId, sc => sc.CourseId, (xy, sc) => new { xy, sc })
                 .Where(m => m.sc.StudentId == studentId)
                 .Select(m => m.xy.x)
+                .Distinct()
                 .ToList();
         }
     }

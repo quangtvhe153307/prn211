@@ -16,13 +16,14 @@ namespace PRNProject.Logics
         {
             return context.StudentCourses.ToList();
         }
-        public List<StudentCourse> GetStudentCourses(int termId, int studentId)
+        public List<StudentCourse> GetStudentCourses(int termId, int userId)
         {
-            return context.Terms.Join(context.Courses, x => x.TermId, y => y.TermId, (x,y) => new {x, y})
-                .Join(context.StudentCourses, xy => xy.y.CourseId, x => x.CourseId, (xy, x) => new {xy, x})
-                .Where(m => m.x.StudentId == studentId && m.xy.x.TermId == termId)
-                .Select(m => m.x)
-                .ToList();
+            context.Subjects.ToList();
+            context.Courses.ToList();
+            context.Students.ToList();
+            List<StudentCourse> list = context.StudentCourses.Where(x => x.Course.TermId == termId).ToList();
+            list = list.Where(x => x.Student.UserId == userId).ToList();
+            return list;
         }
     }
 }

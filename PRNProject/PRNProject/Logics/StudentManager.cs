@@ -18,7 +18,9 @@ namespace PRNProject.Logics
         }
         public Student GetStudent(int id)
         {
-            return context.Students.FirstOrDefault(x => x.StudentId == id);
+            context.Accounts.ToList();
+            return context.Students.FirstOrDefault(x => x.UserId == id);
         }
+
     }
 }

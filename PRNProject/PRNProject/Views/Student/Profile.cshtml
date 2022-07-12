@@ -1,0 +1,20 @@
+﻿@using PRNProject.Models
+@model Student
+<div>
+    <form>
+        <div class="row">
+            <div class="col-md-4">
+                <input type="text" value="@Model.StudentId"/>
+                <div>
+                    <input value="@Model.FirstName"/>
+                    <input value="@Model.MidName"/>
+                    <input value="@Model.LastName"/>
+                </div>
+                <input type="text" value="@Model.Roll"/>
+                <input type="text" value="@Model.User.Address"/>
+                <input type="text" value="@Model.User.Email"/>
+                <input type="text" value="@Model.User.Phone"/>
+            </div>
+        </div>
+    </form>
+</div>

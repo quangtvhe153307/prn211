@@ -28,14 +28,14 @@
                     <h2>Login</h2>
                     <div class="form-group">
                         <label for="inputUsername">Username</label>
-                        <input type="text" class="form-control" id="inputUsername"  name="user" value="">
+                        <input type="text" class="form-control" id="inputUsername"  name="user" value="@ViewBag.User">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" name="pass" value="">
+                        <input type="password" class="form-control" id="exampleInputPassword1" name="pass" value="@ViewBag.Pass">
                     </div>
                     <div class="form-group form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1" name="remember" value="on">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1" name="remember" value="on" @(ViewBag.Remember == "on"?"checked":"")>
                         <label class="form-check-label" for="exampleCheck1">Remember password</label>
                     </div>
                     <button type="submit" class="btn btn-primary btn-block">Login</button>

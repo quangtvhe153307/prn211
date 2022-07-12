@@ -1,0 +1,44 @@
+﻿.flex{
+    display: flex;
+}
+.flex-column{
+    flex-direction: column;
+}
+.flex-1{
+    flex:1;
+}
+body {
+    background: #0000000d;
+}
+.row.container-lg {
+    background: #fff;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 50px;
+}
+.header {
+    font-size: 200%;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.body-left span {
+    border-bottom: 1px solid #0003;
+    padding-left: 20px;
+}
+.term.bg-blue {
+    background: red;
+    font-size: 150%;
+    font-weight: 500;
+    padding-left: 20px;
+}
+.subject {
+    background: red;
+    font-size: 150%;
+    font-weight: 500;
+    padding-left: 20px;
+}
+.body-right span {
+    border-bottom: 1px solid #0003;
+    padding-left: 20px;
+}

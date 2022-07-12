@@ -1,21 +1,6 @@
 ﻿@using PRNProject.Models
-@model List<News>
 <link href="~/css/StyleHome.css" rel="stylesheet"/>
-<div class="row container-lg">
-    <div class="body-left col-md-5">
-        <div>
-            <div>
-                <h3>News</h3>
-                <ul>
-                  @foreach (News n in Model)
-                   {
-                       <li><a href="#"><span>@n.CreatedDate : </span>@n.Title</a></li>
-                   }
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="body-right col-md-7">
+
         <div>
                 <div>
                     <h3>Academic information</h3>
@@ -49,7 +34,7 @@
                     <h4>Report</h4>
                     <ul>
                         <li><a href="">Attendance report </a><span>(Báo cáo điểm danh)</span></li>
-                        <li><a href="/Grade/studentgrade">Mark report </a><span>(Báo cáo điểm)</span></li>
+                        <li><a href="/Grade/StudentGrade">Mark report </a><span>(Báo cáo điểm)</span></li>
                         <li><a href="">Academic transcript </a><span>(Báo cáo điểm)</span></li>
                     </ul>
                 </div>
@@ -59,14 +44,11 @@
                     <h4>Other</h4>
                     <span>@ViewBag.Id</span>
                     <ul>
-                        <li><a href="">Student profile </a><span></span></li>
+                        <li><a href="/Student/Profile">Student profile </a><span></span></li>
                         <li><a href="">Update profile </a><span></span></li>
                         <li><a href="">View semeter </a><span>(Xem thông tin về học kỳ)</span></li>
                         <li><a href="">View room </a><span>(Xem thông tin về phòng)</span></li>
                     </ul>
                 </div>
             </div>
-
-        </div>
-    </div>
-</div>
+            </div>

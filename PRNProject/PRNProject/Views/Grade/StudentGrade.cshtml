@@ -1,14 +1,38 @@
 ﻿@using PRNProject.Models
 @model List<StudentCourse>
-<div>
+<link href="~/css/StyleStudentGrade.css" rel="stylesheet"/>
+<div class="row">
+    <div class="header">
+        Grade report for @ViewBag.Name
+    </div>
+    <div class="body-left col-md-4">
+        <div class="term bg-blue">
+            Term
+        </div>
+        <div class="flex flex-column">
     @foreach (Term t in ViewBag.Terms)
    {
-       <span>@t.TermName</span>
+       <span><a href="/Grade/StudentGrade/@t.TermId">@t.TermName</a></span>
    }
+        </div>
 </div>
-<div>
-    @foreach (StudentCourse sc in Model)
+<div class="body-right col-md-8">
+<table class="table table-bordered table-stripped">
+  <thead>
+    <tr>
+      <th scope="col">Subject</th>
+      <th scope="col">Grade</th>
+    </tr>
+  </thead>
+  <tbody>
+             @foreach (StudentCourse s in Model)
    {
-       <span>@sc.Mark</span>
+     <tr>
+      <td>@s.Course.Subject.SubjectName</td>
+      <td>@s.Mark</td>
+    </tr>
    }
+  </tbody>
+</table>
+</div>
 </div>

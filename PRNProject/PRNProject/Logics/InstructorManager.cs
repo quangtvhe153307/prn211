@@ -18,7 +18,8 @@ namespace PRNProject.Logics
         }
         public Instructor GetInstructor(int id)
         {
-            return context.Instructors.FirstOrDefault(x => x.InstructorId == id);
+            context.Accounts.ToList();
+            return context.Instructors.FirstOrDefault(x => x.UserId == id);
         }
     }
 }

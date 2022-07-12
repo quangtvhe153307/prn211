@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using PRNProject.Models
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -10,7 +11,7 @@
 <body>
     <nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar scroll</a>
+    <a class="navbar-brand" href="/home/home">SMS</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -33,19 +34,44 @@
             <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
         </li>
-        <li class="nav-item">
-          <a class="nav-link disabled">Link</a>
-        </li>
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
     </div>
+<div class="btn-group account-container">
+  <div type="button" class="btn dropdown-toggle account-wrapper" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+    <img src="https://steamuserimages-a.akamaihd.net/ugc/1479948835346597290/21C17714FAB9334768A882F9884AFA81ABEB0809/?imw=512&&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false" class="img-thumbnail"/>
+    <span id="acc-name"></span>
+  </div>
+  <ul class="dropdown-menu dropdown-menu-lg-end">
+    <li><a class="dropdown-item" href="#">Profile</a></li>
+    <li><a class="dropdown-item" href="#">Mark Report</a></li>
+    <li><hr class="dropdown-divider"></li>
+    <li><a class="dropdown-item" href="#">Logout</a></li>
+  </ul>
+</div>
   </div>
 </nav>
     <div class="container body-content">
+        <div class="row container-lg">
+    <div class="layout-body-left col-md-5">
+        <div>
+            <div>
+                <h3><a href="/News/List">News</a></h3>
+                <ul class="news-wrapper">
+                  @foreach (News n in ViewBag.News)
+                   {
+                       <li><a href="#"><span>@n.CreatedDate : </span>@n.Title</a></li>
+                   }
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="body-right col-md-7">
+        
         @RenderBody()
+
+        </div>
+    </div>
+</div>
         <hr />
         <footer>
             <div class="container">
@@ -84,5 +110,7 @@
         </footer>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="~/js/Layout.js"></script>
 </body>
 </html>

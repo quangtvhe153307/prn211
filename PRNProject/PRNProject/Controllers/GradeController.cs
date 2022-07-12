@@ -13,15 +13,28 @@ namespace PRNProject.Controllers
         {
             return View();
         }
-        public IActionResult StudentGrade()
+        public IActionResult StudentGrade(int termId)
         {
             Account a = JsonConvert.DeserializeObject<Account>(HttpContext.Session.GetString("account"));
             StudentCourseManager studentCourseManager = new StudentCourseManager();
+            StudentManager studentManager = new StudentManager();
             TermManager termManager = new TermManager();
+
             List<Term> terms = termManager.GetTerms(a.UserId);
-            List<StudentCourse> studentCourse = studentCourseManager.GetStudentCourses(terms[terms.Count-1].TermId, a.UserId);
             ViewBag.Terms = terms;
-            return View(studentCourse);
+
+            Student s = studentManager.GetStudent(a.UserId);
+            ViewBag.Name = s.FirstName + " " + s.MidName + " " + s.LastName;
+            if (termId == 0)
+            {
+                termId = terms[terms.Count - 1].TermId;
+            }
+
+            NewsManager newsManager = new NewsManager();
+            List<News> newList = newsManager.GetNews();
+            ViewBag.News = newList;
+            List<StudentCourse> studentCourses = studentCourseManager.GetStudentCourses(termId, a.UserId);
+            return View(studentCourses);
         }
     }
 }

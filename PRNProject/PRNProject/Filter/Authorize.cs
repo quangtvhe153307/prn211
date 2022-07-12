@@ -13,7 +13,7 @@ namespace PRNProject.Filter
         public void OnAuthorization(AuthorizationFilterContext context)
         {
             string session = context.HttpContext.Session.GetString("account");
-            if(session is null)
+            if (session is null)
             {
                 context.Result = new StatusCodeResult(StatusCodes.Status403Forbidden);
                 return;
