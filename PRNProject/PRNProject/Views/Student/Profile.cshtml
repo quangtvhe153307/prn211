@@ -1,20 +1,48 @@
 ﻿@using PRNProject.Models
 @model Student
+<link href="~/css/StyleStudentProfile.css" rel="stylesheet"/>
 <div>
-    <form>
-        <div class="row">
-            <div class="col-md-4">
-                <input type="text" value="@Model.StudentId"/>
-                <div>
-                    <input value="@Model.FirstName"/>
-                    <input value="@Model.MidName"/>
-                    <input value="@Model.LastName"/>
+    <form id="frm">
+        <div class="row student-info-wrapper">
+            <div class="col-md-4 student-image">
+                <img src="https://scontent.fhan3-5.fna.fbcdn.net/v/t1.6435-9/198168151_1953884724758947_5206652219466023165_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=174925&_nc_ohc=2q_ZdavHIdEAX9VI8y5&_nc_ht=scontent.fhan3-5.fna&oh=00_AT8tv08i2n6ppfcLf1B8rjiFW_xQz7BQkEFV0FycT1xFMg&oe=62F3F14B" class="student-image img-thumbnail"/>
+            </div>
+            <div class="col-md-8 flex flex-column student-info">
+                <input type="hidden" value="@Model.StudentId" id="student-id" readonly/>
+                    <div class="item">
+                        <label class="item-name" for="roll">Roll: </label>
+                        <input value="@Model.Roll" id="roll" readonly name="s.Roll"/>
+                    </div>
+                <div class="student-name flex">
+                    <div class="item">
+                        <label class="item-name" for="first-name">First Name: </label>
+                        <input value="@Model.FirstName" id="first-name" disabled aria-label="disabled" name="s.FirstName"/>
+                    </div>
+                    <div class="item">
+                        <label class="item-name" for="mid-name">Mid Name: </label>
+                        <input value="@Model.MidName" id="mid-name" disabled aria-label="disabled" name="s.MidName"/>
+                    </div>
                 </div>
-                <input type="text" value="@Model.Roll"/>
-                <input type="text" value="@Model.User.Address"/>
-                <input type="text" value="@Model.User.Email"/>
-                <input type="text" value="@Model.User.Phone"/>
+                    <div class="item">
+                        <label class="item-name" for="last-name">Last Name: </label>
+                        <input value="@Model.LastName" id="last-name" disabled aria-label="disabled" name="s.LastName"/>
+                    </div>
+                    <div class="item">
+                        <label class="item-name" for="student-address">Address: </label>
+                        <input type="text" value="@Model.User.Address" class="student-address" disabled aria-label="disabled" name="a.Address"/>
+                    </div>
+                    <div class="item">
+                        <label class="item-name" for="student-email">Email: </label>
+                        <input type="text" value="@Model.User.Email" class="student-email" disabled aria-label="disabled" name="a.Email"/>
+                    </div>
+                      <div class="item">
+                        <label class="item-name" for="student-phone">Phone: </label>
+                        <input type="text" value="@Model.User.Phone" class="student-phone" disabled aria-label="disabled" name="a.Phone"/>
+                    </div>
             </div>
         </div>
     </form>
+    <button type="button" class="btn btn-outline-primary" id="edit-btn">Edit</button>
+    <button type="button" class="btn btn-outline-primary" id="save-btn">Save</button>
+    <button type="button" class="btn btn-outline-primary" id="cancel-btn">Cancel</button>
 </div>

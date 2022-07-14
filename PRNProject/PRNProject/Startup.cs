@@ -34,15 +34,11 @@ namespace PRNProject
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "/{controller=login}/{action=index}"
+                    pattern: "/{controller=authentication}/{action=index}"
                     );
                 endpoints.MapControllerRoute(
-                    name: "p0",
-                    pattern: "/{controller=home}/{action=home}"
-                    );
-                endpoints.MapControllerRoute(
-                    name: "p1",
-                    pattern: "/{controller=grade}/{action=studentgrade}/{termid=0}"
+                    name: "d1",
+                    pattern: "/{controller=news}/{action=list}/{id?}"
                     );
             });
         }

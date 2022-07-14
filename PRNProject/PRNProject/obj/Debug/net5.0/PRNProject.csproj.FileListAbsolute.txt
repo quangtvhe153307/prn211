@@ -141,3 +141,7 @@ C:\Users\Admin\Desktop\New folder\prn211\PRNProject\PRNProject\obj\Debug\net5.0\
 C:\Users\Admin\Desktop\New folder\prn211\PRNProject\PRNProject\obj\Debug\net5.0\ref\PRNProject.dll
 C:\Users\Admin\Desktop\New folder\prn211\PRNProject\PRNProject\obj\Debug\net5.0\Razor\Views\Student\Profile.cshtml.g.cs
 C:\Users\Admin\Desktop\New folder\prn211\PRNProject\PRNProject\obj\Debug\net5.0\Razor\Views\Student\_ViewStart.cshtml.g.cs
+C:\Users\Admin\Desktop\New folder\prn211\PRNProject\PRNProject\obj\Debug\net5.0\Razor\Views\News\List.cshtml.g.cs
+C:\Users\Admin\Desktop\New folder\prn211\PRNProject\PRNProject\obj\Debug\net5.0\Razor\Views\News\_Layout.cshtml.g.cs
+C:\Users\Admin\Desktop\New folder\prn211\PRNProject\PRNProject\obj\Debug\net5.0\Razor\Views\News\_ViewStart.cshtml.g.cs
+C:\Users\Admin\Desktop\New folder\prn211\PRNProject\PRNProject\obj\Debug\net5.0\Razor\Views\News\Details.cshtml.g.cs

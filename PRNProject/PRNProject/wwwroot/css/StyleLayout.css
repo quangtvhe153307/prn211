@@ -1,4 +1,7 @@
-﻿nav.navbar.navbar-expand-lg {
+﻿body {
+    font-family: fangsong;
+}
+nav.navbar.navbar-expand-lg {
     background: pink;
     height: 70px;
 }
@@ -108,7 +111,7 @@ footer{
     margin-bottom: 5px;
 }
 .layout-body-left ul{
-    height: 450px;
+    height: 100%;
 }
 img.img-thumbnail {
     width: 40px;
@@ -136,4 +139,8 @@ ul.news-wrapper span {
     color: black;
     font-weight: 700;
     font-family: fangsong;
+}
+.btn-view-news {
+    float: right;
+    margin-right: 30px;
 }

@@ -1,0 +1,65 @@
+﻿@using PRNProject.Models
+@model List<News>
+<link href="~/css/StyleNewsList.css" rel="stylesheet"/>
+<nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">News List</li>
+  </ol>
+</nav>
+<div>
+    <h1>News</h1>
+    <div class="news-container">
+        <ul>
+            @foreach (News news in Model)
+           {
+               <li><span>@news.CreatedDate</span><a href="/News/Details/@news.NewsId">@news.Title</a></li>
+           }
+        </ul>
+    </div>
+    <nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    <li class="page-item @(ViewBag.PageNumber == 1?"disabled":"")">
+      <a class="page-link" href="/News/List/@(ViewBag.PageNumber - 1)">Previous</a>
+    </li>
+            @if (ViewBag.PageNumber == 1)
+            {
+                <li class="page-item"><a class="page-link" href="/News/List/1">1</a></li>
+                <li class="page-item"><a class="page-link" href="/News/List/2">2</a></li>
+                <li class="page-item"><a class="page-link" href="/News/List/3">3</a></li>
+            } else if(ViewBag.PageNumber == ViewBag.TotalPage)
+            {
+                <li class="page-item"><a class="page-link" href="/News/List/@(ViewBag.TotalPage - 2)">@(ViewBag.TotalPage - 2)</a></li>
+                <li class="page-item"><a class="page-link" href="/News/List/@(ViewBag.TotalPage - 1)">@(ViewBag.TotalPage - 1)</a></li>
+                <li class="page-item"><a class="page-link" href="/News/List/@(ViewBag.TotalPage)">@(ViewBag.TotalPage)</a></li>
+            } else
+            {
+                <li class="page-item"><a class="page-link" href="/News/List/@(ViewBag.PageNumber - 1)">@(ViewBag.PageNumber - 1)</a></li>
+                <li class="page-item"><a class="page-link" href="/News/List/@(ViewBag.PageNumber)">@(ViewBag.PageNumber)</a></li>
+                <li class="page-item"><a class="page-link" href="/News/List/@(ViewBag.PageNumber + 1)">@(ViewBag.PageNumber + 1)</a></li>
+            }
+            <li class="page-item @(ViewBag.PageNumber == ViewBag.TotalPage?"disabled":"")">
+              <a class="page-link" href="/News/List/@(ViewBag.PageNumber + 1)">Next</a>
+            </li>
+            <li>
+                <form action="/News/List" method="post" id="frm">
+                    <input type="number" name="id" oninput="checkNumber(this, @ViewBag.TotalPage);"/>
+                </form>
+            </li>
+            <li class="page-item goto-page" onclick="searchNewsPage();"><i class="fa-solid fa-magnifying-glass"></i></li>
+  </ul>
+</nav>
+</div>
+<script>
+    function checkNumber(item, max) {
+    if (item.value > max) {
+        item.value = max;
+    }
+    if (item.value < 1) {
+        item.value = 1;
+    }
+}
+function searchNewsPage(){
+    document.getElementById('frm').submit();
+}
+</script>

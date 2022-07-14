@@ -1,0 +1,32 @@
+﻿@using PRNProject.Models
+@model News
+<link href="~/css/StyleNewsList.css" rel="stylesheet"/>
+<nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item"><a href="/News/List/1">News List</a></li>
+    <li class="breadcrumb-item active" aria-current="page">News Details</li>
+  </ol>
+</nav>
+<div>
+    <div class="news-title-container">
+        <div class="news-title">
+            @Model.Title
+        </div>
+        <div class="publish-infor">
+            Post by <span>@Model.User.Username</span> on @Model.CreatedDate
+        </div>
+    </div>
+    <div class="news-content">
+        @Model.Context
+    </div>
+</div>
+<div class="related-news">
+    <span>Others news</span>
+    <ul>
+        @foreach (News item in ViewBag.OtherNews)
+       {
+            <li><span>@item.CreatedDate</span><a href="/News/Details/@item.NewsId">@item.Title</a></li>
+       }
+    </ul>
+</div>

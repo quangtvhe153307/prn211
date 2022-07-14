@@ -20,5 +20,10 @@ namespace PRNProject.Logics
         {
             return context.Accounts.FirstOrDefault(x => x.Username.Equals(username) && x.Password.Equals(pass));
         }
+        public void UpdateAccount(Account a)
+        {
+            context.Accounts.Update(a);
+            context.SaveChanges();
+        }
     }
 }

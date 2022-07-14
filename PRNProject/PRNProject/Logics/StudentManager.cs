@@ -21,6 +21,11 @@ namespace PRNProject.Logics
             context.Accounts.ToList();
             return context.Students.FirstOrDefault(x => x.UserId == id);
         }
+        public void UpdateStudent(Student student)
+        {
+            context.Students.Update(student);
+            context.SaveChanges();
+        }
 
     }
 }
