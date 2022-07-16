@@ -13,7 +13,7 @@ namespace PRNProject.Controllers
         {
             return View();
         }
-        public IActionResult StudentGrade(int termId)
+        public IActionResult StudentGrade(int id)
         {
             Account a = JsonConvert.DeserializeObject<Account>(HttpContext.Session.GetString("account"));
             StudentCourseManager studentCourseManager = new StudentCourseManager();
@@ -25,15 +25,15 @@ namespace PRNProject.Controllers
 
             Student s = studentManager.GetStudent(a.UserId);
             ViewBag.Name = s.FirstName + " " + s.MidName + " " + s.LastName;
-            if (termId == 0)
+            if (id == 0)
             {
-                termId = terms[terms.Count - 1].TermId;
+                id = terms[terms.Count - 1].TermId;
             }
 
             NewsManager newsManager = new NewsManager();
-            List<News> newList = newsManager.GetNews();
+            List<News> newList = newsManager.GetLatestNews();
             ViewBag.News = newList;
-            List<StudentCourse> studentCourses = studentCourseManager.GetStudentCourses(termId, a.UserId);
+            List<StudentCourse> studentCourses = studentCourseManager.GetStudentCourses(id, a.UserId);
             return View(studentCourses);
         }
     }

@@ -1,0 +1,34 @@
+﻿@using PRNProject.Models
+@model List<Room>
+<nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/home/home">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Rooms</li>
+  </ol>
+  </nav>
+  <div>
+        <h1>Rooms</h1>
+        <div class="news-container">
+            <table class="table table-striped table-hover table-bordered">
+              <thead>
+                <tr>
+                  <th scope="col">Roome Code</th>
+                  <th scope="col">Capacity</th>
+                  <th scope="col">Type</th>
+                  <th scope="col">Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                  @foreach (Room r in Model)
+                 {
+                     <tr>
+                         <td>@r.RoomCode</td>
+                         <td>@r.Capacity</td>
+                         <td>@r.Type</td>
+                         <td>@r.Description</td>
+                     </tr>
+                 }
+              </tbody>
+            </table>
+        </div>
+  </div>

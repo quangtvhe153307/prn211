@@ -35,3 +35,8 @@ input#last-name {
 #save-btn, #cancel-btn {
     display: none;
 }
+#message {
+    color: red;
+    font-weight: bold;
+    font-size: 150%;
+}

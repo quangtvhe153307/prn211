@@ -29,20 +29,21 @@
                     </div>
                     <div class="item">
                         <label class="item-name" for="student-address">Address: </label>
-                        <input type="text" value="@Model.User.Address" class="student-address" disabled aria-label="disabled" name="a.Address"/>
+                        <input type="text" value="@Model.User.Address" class="student-address" id="student-address" disabled aria-label="disabled" name="a.Address"/>
                     </div>
                     <div class="item">
                         <label class="item-name" for="student-email">Email: </label>
-                        <input type="text" value="@Model.User.Email" class="student-email" disabled aria-label="disabled" name="a.Email"/>
+                        <input type="text" value="@Model.User.Email" class="student-email" id="student-email" disabled aria-label="disabled" name="a.Email"/>
                     </div>
                       <div class="item">
                         <label class="item-name" for="student-phone">Phone: </label>
-                        <input type="text" value="@Model.User.Phone" class="student-phone" disabled aria-label="disabled" name="a.Phone"/>
+                        <input type="text" value="@Model.User.Phone" class="student-phone" id="student-phone" disabled aria-label="disabled" name="a.Phone"/>
                     </div>
             </div>
         </div>
     </form>
-    <button type="button" class="btn btn-outline-primary" id="edit-btn">Edit</button>
-    <button type="button" class="btn btn-outline-primary" id="save-btn">Save</button>
-    <button type="button" class="btn btn-outline-primary" id="cancel-btn">Cancel</button>
+    <button type="button" class="btn btn-primary" id="edit-btn">Edit</button>
+    <button type="button" class="btn btn-primary" id="save-btn">Save</button>
+    <button type="button" class="btn btn-primary" id="cancel-btn">Cancel</button>
+    <span id="message"></span>
 </div>
