@@ -25,5 +25,11 @@ namespace PRNProject.Logics
             list = list.Where(x => x.Student.UserId == userId).ToList();
             return list;
         }
+        public StudentCourse GetStudentCourse(int subjectId, int studentId)
+        {
+            context.Terms.ToList();
+            context.Courses.ToList();
+            return context.StudentCourses.FirstOrDefault(x => x.Course.SubjectId == subjectId && x.StudentId == studentId);
+        }
     }
 }

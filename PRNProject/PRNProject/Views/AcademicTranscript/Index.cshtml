@@ -1,0 +1,70 @@
+﻿@using PRNProject.Models
+@model Curiculum
+<div class="row">
+    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/Home/Home">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Academic Transcript</li>
+        </ol>
+    </nav>
+    <div>
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Term NO</th>
+                        <th scope="col">Semeter</th>
+                        <th scope="col">Subject Code</th>
+                        <th scope="col">Subject Name</th>
+                        <th scope="col">Grade</th>
+                        <th scope="col">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (int i = 0; i < Model.CuriculumSubjects.Count; i++)
+                    {
+                        <tr>
+                            <td>@(i+1)</td>
+                            <td>@Model.CuriculumSubjects.ToList()[i].TermNo</td>
+                            <td>
+                                @if (ViewBag.StudentCourses[i] != null)
+                                {
+                                    @ViewBag.StudentCourses[i].Course.Term.TermName
+                                }
+                            </td>
+                            <td>@Model.CuriculumSubjects.ToList()[i].Subject.SubjectCode</td>
+                            <td>@Model.CuriculumSubjects.ToList()[i].Subject.SubjectName</td>
+                            <td>
+                                @if (ViewBag.StudentCourses[i] != null)
+                                {
+                                    @ViewBag.StudentCourses[i].Mark
+                                }
+                            </td>
+                            <td>
+                                @if (ViewBag.StudentCourses[i] != null)
+                                {
+                                    if (ViewBag.StudentCourses[i].Mark >= 5)
+                                    {
+                                        @("Passed")
+                                    }
+                                    else if(ViewBag.StudentCourses[i].Mark is null)
+                                    {
+                                        @("Studying")
+                                    } else
+                                    {
+                                        @("Failed")
+                                    }
+                                }
+                                else
+                                {
+                                    @("Not Started")
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

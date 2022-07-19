@@ -10,7 +10,7 @@ namespace PRNProject.Logics
 
         public AccountManager()
         {
-            context = new PRNProjectContext();
+            context = new();
         }
         public List<Account> GetAccounts()
         {

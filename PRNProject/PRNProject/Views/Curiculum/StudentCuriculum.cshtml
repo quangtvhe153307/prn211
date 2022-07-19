@@ -1,0 +1,36 @@
+﻿@using PRNProject.Models
+@model Student
+<div class="row">
+    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/Home/Home">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Curiculum</li>
+      </ol>
+    </nav>
+    <h1 class="cur-title">Student @Model.FirstName @Model.MidName @Model.LastName (@Model.Roll) - <span class="cur-name">@Model.MajorCur.Curiculum.CuriculumName</span></></h1>
+    <div>
+        <div class="table-responsive">
+                    <table class="table table-bordered table-hover">
+                      <thead>
+                        <tr>
+                          <th scope="col">#</th>
+                          <th scope="col">Subject Code</th>
+                          <th scope="col">Subject Name</th>
+                          <th scope="col">Term NO</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                       @for (var i = 0; i < Model.MajorCur.Curiculum.CuriculumSubjects.Count; i++)
+                      {
+                            <tr>
+                               <td>@(i+1)</td>
+                               <td>@Model.MajorCur.Curiculum.CuriculumSubjects.ToList()[i].Subject.SubjectCode</td>
+                               <td>@Model.MajorCur.Curiculum.CuriculumSubjects.ToList()[i].Subject.SubjectName</td>
+                               <td>@Model.MajorCur.Curiculum.CuriculumSubjects.ToList()[i].TermNo</td>
+                           </tr>
+                      }
+                      </tbody>
+                    </table>
+        </div>
+    </div>
+</div>

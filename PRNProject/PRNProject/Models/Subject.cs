@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 #nullable disable
 
@@ -9,6 +10,7 @@ namespace PRNProject.Models
         public Subject()
         {
             Courses = new HashSet<Course>();
+            CuriculumSubjects = new HashSet<CuriculumSubject>();
         }
 
         public int SubjectId { get; set; }
@@ -18,5 +20,6 @@ namespace PRNProject.Models
 
         public virtual Department Department { get; set; }
         public virtual ICollection<Course> Courses { get; set; }
+        public virtual ICollection<CuriculumSubject> CuriculumSubjects { get; set; }
     }
 }

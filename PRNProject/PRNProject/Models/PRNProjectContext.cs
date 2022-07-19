@@ -1,5 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
+﻿using System;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata;
 
 #nullable disable
 
@@ -20,8 +21,12 @@ namespace PRNProject.Models
         public virtual DbSet<Campus> Campuses { get; set; }
         public virtual DbSet<Course> Courses { get; set; }
         public virtual DbSet<CourseSchedule> CourseSchedules { get; set; }
+        public virtual DbSet<Curiculum> Curiculums { get; set; }
+        public virtual DbSet<CuriculumSubject> CuriculumSubjects { get; set; }
         public virtual DbSet<Department> Departments { get; set; }
         public virtual DbSet<Instructor> Instructors { get; set; }
+        public virtual DbSet<Major> Majors { get; set; }
+        public virtual DbSet<MajorCur> MajorCurs { get; set; }
         public virtual DbSet<News> News { get; set; }
         public virtual DbSet<RollCallBook> RollCallBooks { get; set; }
         public virtual DbSet<Room> Rooms { get; set; }
@@ -34,8 +39,8 @@ namespace PRNProject.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-                var config = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
-                optionsBuilder.UseSqlServer(config.GetConnectionString("PRNStr"));
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+                optionsBuilder.UseSqlServer("server=localhost;database=PRNProject;user=sa;password=123;");
             }
         }
 
@@ -144,6 +149,41 @@ namespace PRNProject.Models
                     .HasConstraintName("FK_COURSE_SCHEDULES_ROOMS");
             });
 
+            modelBuilder.Entity<Curiculum>(entity =>
+            {
+                entity.ToTable("CURICULUM");
+
+                entity.Property(e => e.CuriculumId).HasColumnName("CuriculumID");
+
+                entity.Property(e => e.CuriculumName)
+                    .HasMaxLength(255)
+                    .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<CuriculumSubject>(entity =>
+            {
+                entity.HasKey(e => new { e.CuriculumId, e.SubjectId })
+                    .HasName("PK__CURICULU__07953B622D6CFC37");
+
+                entity.ToTable("CURICULUM_SUBJECT");
+
+                entity.Property(e => e.CuriculumId).HasColumnName("CuriculumID");
+
+                entity.Property(e => e.SubjectId).HasColumnName("SubjectID");
+
+                entity.HasOne(d => d.Curiculum)
+                    .WithMany(p => p.CuriculumSubjects)
+                    .HasForeignKey(d => d.CuriculumId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_CS_CURICULUM");
+
+                entity.HasOne(d => d.Subject)
+                    .WithMany(p => p.CuriculumSubjects)
+                    .HasForeignKey(d => d.SubjectId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_CS_SUBJECT");
+            });
+
             modelBuilder.Entity<Department>(entity =>
             {
                 entity.ToTable("DEPARTMENTS");
@@ -174,6 +214,32 @@ namespace PRNProject.Models
                     .WithMany(p => p.Instructors)
                     .HasForeignKey(d => d.UserId)
                     .HasConstraintName("FK_INSTRUCTORS_ACCOUNTS");
+            });
+
+            modelBuilder.Entity<Major>(entity =>
+            {
+                entity.ToTable("MAJORS");
+
+                entity.Property(e => e.MajorId).HasColumnName("MajorID");
+
+                entity.Property(e => e.MajorName)
+                    .HasMaxLength(255)
+                    .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<MajorCur>(entity =>
+            {
+                entity.ToTable("MAJOR_CUR");
+
+                entity.HasOne(d => d.Curiculum)
+                    .WithMany(p => p.MajorCurs)
+                    .HasForeignKey(d => d.CuriculumId)
+                    .HasConstraintName("FK_MJ_Curiculum");
+
+                entity.HasOne(d => d.Major)
+                    .WithMany(p => p.MajorCurs)
+                    .HasForeignKey(d => d.MajorId)
+                    .HasConstraintName("FK_MJ_Major");
             });
 
             modelBuilder.Entity<News>(entity =>
@@ -248,6 +314,11 @@ namespace PRNProject.Models
                     .HasColumnName("Roll#");
 
                 entity.Property(e => e.UserId).HasColumnName("UserID");
+
+                entity.HasOne(d => d.MajorCur)
+                    .WithMany(p => p.Students)
+                    .HasForeignKey(d => d.MajorCurId)
+                    .HasConstraintName("FK_Student_MC");
 
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.Students)

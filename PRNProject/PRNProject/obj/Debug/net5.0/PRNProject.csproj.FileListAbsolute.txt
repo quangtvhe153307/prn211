@@ -226,3 +226,7 @@ C:\Users\Admin\Desktop\PRN20220715\prn211\PRNProject\PRNProject\obj\Debug\net5.0
 C:\Users\Admin\Desktop\PRN20220715\prn211\PRNProject\PRNProject\obj\Debug\net5.0\PRNProject.csproj.CopyComplete
 C:\Users\Admin\Desktop\PRN20220715\prn211\PRNProject\PRNProject\obj\Debug\net5.0\PRNProject.genruntimeconfig.cache
 C:\Users\Admin\Desktop\PRN20220715\prn211\PRNProject\PRNProject\obj\Debug\net5.0\ref\PRNProject.dll
+C:\Users\Admin\Desktop\PRN20220715\prn211\PRNProject\PRNProject\obj\Debug\net5.0\Razor\Views\Curiculum\StudentCuriculum.cshtml.g.cs
+C:\Users\Admin\Desktop\PRN20220715\prn211\PRNProject\PRNProject\obj\Debug\net5.0\Razor\Views\Curiculum\_ViewStart.cshtml.g.cs
+C:\Users\Admin\Desktop\PRN20220715\prn211\PRNProject\PRNProject\obj\Debug\net5.0\Razor\Views\AcademicTranscript\Index.cshtml.g.cs
+C:\Users\Admin\Desktop\PRN20220715\prn211\PRNProject\PRNProject\obj\Debug\net5.0\Razor\Views\AcademicTranscript\_ViewStart.cshtml.g.cs

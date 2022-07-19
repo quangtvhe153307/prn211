@@ -18,6 +18,11 @@ namespace PRNProject.Logics
         }
         public Student GetStudent(int id)
         {
+            context.Subjects.ToList();
+            context.CuriculumSubjects.ToList();
+            context.Curiculums.ToList();
+            context.Majors.ToList();
+            context.MajorCurs.ToList();
             context.Accounts.ToList();
             return context.Students.FirstOrDefault(x => x.UserId == id);
         }
