@@ -18,6 +18,8 @@ namespace PRNProject.Models
         }
 
         public virtual DbSet<Account> Accounts { get; set; }
+        public virtual DbSet<Application> Applications { get; set; }
+        public virtual DbSet<ApplicationStatus> ApplicationStatuses { get; set; }
         public virtual DbSet<Campus> Campuses { get; set; }
         public virtual DbSet<Course> Courses { get; set; }
         public virtual DbSet<CourseSchedule> CourseSchedules { get; set; }
@@ -31,6 +33,7 @@ namespace PRNProject.Models
         public virtual DbSet<RollCallBook> RollCallBooks { get; set; }
         public virtual DbSet<Room> Rooms { get; set; }
         public virtual DbSet<Student> Students { get; set; }
+        public virtual DbSet<StudentApplication> StudentApplications { get; set; }
         public virtual DbSet<StudentCourse> StudentCourses { get; set; }
         public virtual DbSet<Subject> Subjects { get; set; }
         public virtual DbSet<Term> Terms { get; set; }
@@ -79,6 +82,27 @@ namespace PRNProject.Models
 
                 entity.Property(e => e.Username)
                     .HasMaxLength(127)
+                    .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<Application>(entity =>
+            {
+                entity.ToTable("APPLICATIONS");
+
+                entity.Property(e => e.ApplicationName).HasMaxLength(125);
+
+                entity.Property(e => e.Cost).HasColumnType("money");
+            });
+
+            modelBuilder.Entity<ApplicationStatus>(entity =>
+            {
+                entity.HasKey(e => e.Status)
+                    .HasName("PK__Applicat__3A15923E7FC43143");
+
+                entity.ToTable("Application_Status");
+
+                entity.Property(e => e.StatusName)
+                    .HasMaxLength(255)
                     .IsUnicode(false);
             });
 
@@ -303,6 +327,8 @@ namespace PRNProject.Models
 
                 entity.Property(e => e.StudentId).ValueGeneratedNever();
 
+                entity.Property(e => e.Balanced).HasColumnType("money");
+
                 entity.Property(e => e.FirstName).HasMaxLength(50);
 
                 entity.Property(e => e.LastName).HasMaxLength(50);
@@ -324,6 +350,41 @@ namespace PRNProject.Models
                     .WithMany(p => p.Students)
                     .HasForeignKey(d => d.UserId)
                     .HasConstraintName("FK_STUDENTS_ACCOUNTS");
+            });
+
+            modelBuilder.Entity<StudentApplication>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToTable("Student_Application");
+
+                entity.Property(e => e.ApplicationId).HasColumnName("ApplicationID");
+
+                entity.Property(e => e.FilePath)
+                    .HasMaxLength(255)
+                    .IsUnicode(false)
+                    .HasColumnName("filePath");
+
+                entity.Property(e => e.SentDate).HasColumnType("datetime");
+
+                entity.Property(e => e.StudentId).HasColumnName("StudentID");
+
+                entity.HasOne(d => d.Application)
+                    .WithMany()
+                    .HasForeignKey(d => d.ApplicationId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_SA_A");
+
+                entity.HasOne(d => d.StatusNavigation)
+                    .WithMany()
+                    .HasForeignKey(d => d.Status)
+                    .HasConstraintName("FK_SA_Status");
+
+                entity.HasOne(d => d.Student)
+                    .WithMany()
+                    .HasForeignKey(d => d.StudentId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_SA_S");
             });
 
             modelBuilder.Entity<StudentCourse>(entity =>

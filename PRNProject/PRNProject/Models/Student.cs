@@ -20,6 +20,7 @@ namespace PRNProject.Models
         public string LastName { get; set; }
         public int? UserId { get; set; }
         public int? MajorCurId { get; set; }
+        public decimal? Balanced { get; set; }
 
         public virtual MajorCur MajorCur { get; set; }
         public virtual Account User { get; set; }

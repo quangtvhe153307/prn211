@@ -48,10 +48,11 @@
                                     {
                                         @("Passed")
                                     }
-                                    else if(ViewBag.StudentCourses[i].Mark is null)
+                                    else if (ViewBag.StudentCourses[i].Mark is null)
                                     {
                                         @("Studying")
-                                    } else
+                                    }
+                                    else
                                     {
                                         @("Failed")
                                     }
@@ -66,5 +67,10 @@
                 </tbody>
             </table>
         </div>
+    </div>
+    <div>
+        <form action="/Student/Export" method="post">
+            <input type="submit" value="Export to Excel"/>
+        </form>
     </div>
 </div>

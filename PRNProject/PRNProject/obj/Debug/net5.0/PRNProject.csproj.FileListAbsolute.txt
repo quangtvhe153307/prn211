@@ -230,3 +230,7 @@ C:\Users\Admin\Desktop\PRN20220715\prn211\PRNProject\PRNProject\obj\Debug\net5.0
 C:\Users\Admin\Desktop\PRN20220715\prn211\PRNProject\PRNProject\obj\Debug\net5.0\Razor\Views\Curiculum\_ViewStart.cshtml.g.cs
 C:\Users\Admin\Desktop\PRN20220715\prn211\PRNProject\PRNProject\obj\Debug\net5.0\Razor\Views\AcademicTranscript\Index.cshtml.g.cs
 C:\Users\Admin\Desktop\PRN20220715\prn211\PRNProject\PRNProject\obj\Debug\net5.0\Razor\Views\AcademicTranscript\_ViewStart.cshtml.g.cs
+C:\Users\Admin\Desktop\PRN20220715\prn211\PRNProject\PRNProject\bin\Debug\net5.0\ClosedXML.dll
+C:\Users\Admin\Desktop\PRN20220715\prn211\PRNProject\PRNProject\bin\Debug\net5.0\DocumentFormat.OpenXml.dll
+C:\Users\Admin\Desktop\PRN20220715\prn211\PRNProject\PRNProject\bin\Debug\net5.0\ExcelNumberFormat.dll
+C:\Users\Admin\Desktop\PRN20220715\prn211\PRNProject\PRNProject\bin\Debug\net5.0\System.IO.Packaging.dll
