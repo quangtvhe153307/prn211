@@ -1,0 +1,72 @@
+﻿@using PRNProject.Models
+@model List<Application>
+<link href="~/css/StyleApplication.css" rel="stylesheet" />
+<div>
+    <div class="panel">
+        <div class="header title" style="margin-top: 10px;
+    margin-bottom: 20px;">
+            View Application
+        </div>
+        <div>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">ApplicationID</th>
+                        <th scope="col">Application Type</th>
+                        <th scope="col">Sent Date</th>
+                        <th scope="col">Status</th>
+                    </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                    @foreach (Application item in Model)
+                    {
+                        <tr>
+                            <td>@item.ApplicationId</td>
+                            <td>@item.TypeNavigation.ApplicationName</td>
+                            <td>@item.SentDate.ToString()</td>
+                            <td class="@(item.Status == 1 ? "pending":"")@(item.Status == 2 ? "approved":"")@(item.Status == 3 ? "rejected":"")">@item.StatusNavigation.StatusName</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+                <li class="page-item @(ViewBag.PageNumber == 1?"disabled":"")">
+                    <a class="page-link" href="/Application/ViewApplication/@(ViewBag.PageNumber - 1)">Previous</a>
+                </li>
+                @if (ViewBag.PageNumber == 1)
+                {
+                    @if (ViewBag.TotalPage >= 3)
+                    {
+                        <li class="page-item"><a class="page-link" href="/Application/ViewApplication/1">1</a></li>
+                        <li class="page-item"><a class="page-link" href="/Application/ViewApplication/2">2</a></li>
+                        <li class="page-item"><a class="page-link" href="/Application/ViewApplication/3">3</a></li>
+                    }
+                    else
+                    {
+                        @for (var i = 1; i <= ViewBag.TotalPage; i++)
+                        {
+                            <li class="page-item"><a class="page-link" href="/Application/ViewApplication/@(i)">@(i)</a></li>
+                        }
+                    }
+                }
+                else if (ViewBag.PageNumber == ViewBag.TotalPage)
+                {
+                    <li class="page-item"><a class="page-link" href="/Application/ViewApplication/@(ViewBag.TotalPage - 2)">@(ViewBag.TotalPage - 2)</a></li>
+                    <li class="page-item"><a class="page-link" href="/Application/ViewApplication/@(ViewBag.TotalPage - 1)">@(ViewBag.TotalPage - 1)</a></li>
+                    <li class="page-item"><a class="page-link" href="/Application/ViewApplication/@(ViewBag.TotalPage)">@(ViewBag.TotalPage)</a></li>
+                }
+                else
+                {
+                    <li class="page-item"><a class="page-link" href="/Application/ViewApplication/@(ViewBag.PageNumber - 1)">@(ViewBag.PageNumber - 1)</a></li>
+                    <li class="page-item"><a class="page-link" href="/Application/ViewApplication/@(ViewBag.PageNumber)">@(ViewBag.PageNumber)</a></li>
+                    <li class="page-item"><a class="page-link" href="/Application/ViewApplication/@(ViewBag.PageNumber + 1)">@(ViewBag.PageNumber + 1)</a></li>
+                }
+                <li class="page-item @(ViewBag.PageNumber == ViewBag.TotalPage?"disabled":"")">
+                    <a class="page-link" href="/Application/ViewApplication/@(ViewBag.PageNumber + 1)">Next</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>

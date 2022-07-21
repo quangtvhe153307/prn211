@@ -1,0 +1,58 @@
+﻿@using PRNProject.Models
+@using System.Globalization
+@model List<ApplicationType>
+<link href="~/css/StyleApplication.css" rel="stylesheet"/>
+<div>
+    <div class="panel">
+        <div class="title">
+            <div class="title-content">
+                Send Application
+            </div>
+        </div>
+        <div class="student-balance">
+            <div>
+                Account balance: <span>@(string.Format(new CultureInfo( "vi-VN", false ).NumberFormat,"{0:C0}", ViewBag.Student.Balanced))</span>
+            </div>
+        </div>
+        <div class="form-container">
+            <form class="frm" id="frm" action="/Application/DoSendApplication" method="post" enctype="multipart/form-data">
+                <table class="table table-bordered">
+                    <tbody>
+                        <tr>
+                            <th scope="col">Application Type</th>
+                            <td class="appType">
+                                <select name="appType">
+                                    @foreach (ApplicationType app in Model)
+                                    {
+                                        <option value="@app.ApplicationId">
+                                            @app.ApplicationName (@(string.Format(new CultureInfo( "vi-VN", false ).NumberFormat,"{0:C0}", app.Cost)))
+                                        </option>
+                                    }
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Purpose</th>
+                            <td>
+                                <textarea name="purpose" class="appPurpose"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">File Attach</th>
+                            <td><input type="file" name="postedFile"/></td>
+                        </tr>
+                        <tr>
+                            <td><span id="message" >@ViewBag.Message</span></td>
+                            <td><button type="submit" class="btn btn-success">Send</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    if(document.getElementById('message').innerHTML == Your balance is not enough){
+        document.getElementById('message').style ="color: red;";
+    }
+</script>

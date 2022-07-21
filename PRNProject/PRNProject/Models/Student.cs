@@ -9,6 +9,7 @@ namespace PRNProject.Models
     {
         public Student()
         {
+            Applications = new HashSet<Application>();
             RollCallBooks = new HashSet<RollCallBook>();
             StudentCourses = new HashSet<StudentCourse>();
         }
@@ -24,6 +25,7 @@ namespace PRNProject.Models
 
         public virtual MajorCur MajorCur { get; set; }
         public virtual Account User { get; set; }
+        public virtual ICollection<Application> Applications { get; set; }
         public virtual ICollection<RollCallBook> RollCallBooks { get; set; }
         public virtual ICollection<StudentCourse> StudentCourses { get; set; }
     }

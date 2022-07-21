@@ -10,10 +10,16 @@ namespace PRNProject.Controllers
     {
         public IActionResult Index()
         {
-            ViewBag.User = Request.Cookies["user"];
-            ViewBag.Pass = Request.Cookies["pass"];
-            ViewBag.Remember = Request.Cookies["remember"];
-            return View("Views/Login/Login.cshtml");
+            if(HttpContext.Session.GetString("account") == null)
+            {
+                ViewBag.User = Request.Cookies["user"];
+                ViewBag.Pass = Request.Cookies["pass"];
+                ViewBag.Remember = Request.Cookies["remember"];
+                return View("Views/Login/Login.cshtml");
+            } else
+            {
+                return View("Views/Home/Home.cschtml");
+            }
         }
         public IActionResult Login(string user, string pass, string remember)
         {
@@ -26,12 +32,12 @@ namespace PRNProject.Controllers
             else
             {
                 HttpContext.Session.SetString("account", JsonConvert.SerializeObject(a));
-                if (remember.Equals("on"))
+                if (!string.IsNullOrEmpty(remember))
                 {
                     Response.Cookies.Append("user", user);
                     Response.Cookies.Append("pass", pass);
                     Response.Cookies.Append("remember", remember);
-                }
+                } 
                 return RedirectPermanent("~/home/home");
             }
         }
@@ -44,6 +50,7 @@ namespace PRNProject.Controllers
             ViewBag.User = Request.Cookies["user"];
             ViewBag.Pass = Request.Cookies["pass"];
             ViewBag.Remember = Request.Cookies["remember"];
+
             return View("Views/Login/Login.cshtml");
         }
     }

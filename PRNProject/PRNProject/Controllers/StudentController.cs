@@ -34,6 +34,33 @@ namespace PRNProject.Controllers
                 return View(student);
             }
         }
+        public IActionResult AddBalance(int id)
+        {
+            if (HttpContext.Session.GetString("account") == null)
+            {
+                return RedirectPermanent("");
+            }
+            Account a = JsonConvert.DeserializeObject<Account>(HttpContext.Session.GetString("account"));
+            StudentManager studentManager = new StudentManager();
+            Student student = studentManager.GetStudent(a.UserId);
+            NewsManager newsManager = new NewsManager();
+            List<News> newList = newsManager.GetLatestNews();
+            ViewBag.News = newList;
+            return View(student);
+        }
+        public IActionResult DoAddBalance(int id, decimal balance)
+        {
+            Account a = JsonConvert.DeserializeObject<Account>(HttpContext.Session.GetString("account"));
+            StudentManager studentManager = new StudentManager();
+            Student student = studentManager.GetStudent(a.UserId);
+            student.Balanced += balance;
+            studentManager.UpdateStudent(student);
+            Dictionary<string, string> map = new Dictionary<string, string>();
+            map.Add("newBalance", student.Balanced.ToString());
+            map.Add("message", "successfully");
+
+            return RedirectToAction("AddBalance", new { id = id });
+        }
         public string UpdateProfile(Student s, Account a)
         {
             AccountManager accountManager = new();

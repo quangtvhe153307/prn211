@@ -8,7 +8,9 @@
         }
     });
 });
-
+document.getElementById('add-balance-btn').addEventListener('click', function () {
+    document.getElementById('add-balance-frm').submit();
+});
 document.getElementById('edit-btn').addEventListener('click', function () {
     document.querySelectorAll('input[aria-label="disabled"]').forEach(x => {
         x.disabled = false;
@@ -59,6 +61,11 @@ function checkNumber(item, max) {
     if (item.value > max) {
         item.value = max;
     }
+    if (item.value < 1) {
+        item.value = 1;
+    }
+}
+function checkBalance(item) {
     if (item.value < 1) {
         item.value = 1;
     }

@@ -40,6 +40,14 @@ namespace PRNProject
                     name: "d1",
                     pattern: "/{controller=news}/{action=list}/{id?}"
                     );
+                endpoints.MapControllerRoute(
+                    name: "d2",
+                    pattern: "/{controller=news}/{action=list}/{id?}/{balance?}"
+                    );
+                endpoints.MapControllerRoute(
+                    name: "d3",
+                    pattern: "/{controller=Application}/{action=DoSendApplication}/{appType?}/{purpose?}/{postedFiles?}"
+                    );
             });
         }
     }

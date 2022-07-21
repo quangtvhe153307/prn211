@@ -40,3 +40,25 @@ input#last-name {
     font-weight: bold;
     font-size: 150%;
 }
+.header {
+    font-size: 150%;
+    font-weight: bold;
+    /* margin-top: 20px; */
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 50px;
+}
+.cur-balance {
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 20%;
+}
+.cur-balance td, .cur-balance th{
+    border-bottom: none;
+}
+.cur-balance thead tr:first-child{
+    border-bottom: 3px solid black;
+}
+.cur-balance th:first-child{
+    border-right: 3px solid black;
+}

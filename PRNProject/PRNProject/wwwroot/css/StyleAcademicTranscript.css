@@ -1,0 +1,7 @@
+﻿.row{
+    border-top: none !important;
+}
+td.status button {
+    border-radius: 3px;
+    font-size: 80%;
+}

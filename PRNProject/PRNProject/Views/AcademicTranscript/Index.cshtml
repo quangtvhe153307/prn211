@@ -1,5 +1,6 @@
 ﻿@using PRNProject.Models
 @model Curiculum
+<link href="~/css/StyleAcademicTranscript.css" rel="stylesheet"/>
 <div class="row">
     <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
         <ol class="breadcrumb">
@@ -41,26 +42,28 @@
                                     @ViewBag.StudentCourses[i].Mark
                                 }
                             </td>
-                            <td>
-                                @if (ViewBag.StudentCourses[i] != null)
-                                {
-                                    if (ViewBag.StudentCourses[i].Mark >= 5)
+                            <td class="status">
+                                <button type="button" class="btn btn-primary" id="status-button">
+                                    @if (ViewBag.StudentCourses[i] != null)
                                     {
-                                        @("Passed")
-                                    }
-                                    else if (ViewBag.StudentCourses[i].Mark is null)
-                                    {
-                                        @("Studying")
+                                        if (ViewBag.StudentCourses[i].Mark >= 5)
+                                        {
+                                            @("Passed")
+                                        }
+                                        else if (ViewBag.StudentCourses[i].Mark is null)
+                                        {
+                                            @("Studying")
+                                        }
+                                        else
+                                        {
+                                            @("Failed")
+                                        }
                                     }
                                     else
                                     {
-                                        @("Failed")
+                                        @("Not Started")
                                     }
-                                }
-                                else
-                                {
-                                    @("Not Started")
-                                }
+                                </button>
                             </td>
                         </tr>
                     }
@@ -70,7 +73,18 @@
     </div>
     <div>
         <form action="/Student/Export" method="post">
-            <input type="submit" value="Export to Excel"/>
+            <input type="submit" value="Export to Excel" />
         </form>
     </div>
 </div>
+<script>
+    document.querySelectorAll('#status-button').forEach(button => {
+        if(button.innerHTML ==== 'Passed'){
+            button.style = "background: green;";
+        } else if(button.innerHTML ==== 'Studying'){
+            button.style = "background: grey;";
+        } else if(button.innerHTML ==== 'Failed'){
+            button.style = "background: red;";
+        }
+    });
+</script>

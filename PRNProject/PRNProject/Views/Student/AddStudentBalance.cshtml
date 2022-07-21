@@ -1,0 +1,12 @@
+﻿@using PRNProject.Models
+@model Student
+<link href="~/css/StyleStudentProfile.css" rel="stylesheet"/>
+<div>
+    <form action="" method="post">
+        <div class="cur-balance">
+            <label for="cur-ba">Current Balance</label>
+            <span id="cur-ba">@Model.Balanced</span>
+        </div>
+    </form>
+    <span id="message"></span>
+</div>
