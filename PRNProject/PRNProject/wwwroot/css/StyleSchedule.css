@@ -1,0 +1,32 @@
+﻿body {
+}
+.title {
+    font-weight: bold;
+    font-size: 250%;
+}
+.flex{
+    display: flex;
+}
+.flex-column{
+    flex-direction: column;
+}
+select {
+    height: 40px;
+    line-height: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+.year {
+    margin-left: 10px;
+    margin-right: 20px;
+}
+.year span, .week span {
+    font-weight: bold;
+}
+td:first-child, th:first-child{
+    text-align: center;
+}
+.container.body-content {
+    margin-top: 30px !important;
+}

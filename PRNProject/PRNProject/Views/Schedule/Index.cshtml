@@ -1,0 +1,104 @@
+﻿@using PRNProject.Models
+@model Dictionary<int, List<RollCallBook>>
+<link href="~/css//StyleSchedule.css" rel="stylesheet" />
+<div class="title">
+    Weekly schedule
+</div>
+<div class="time-range-option flex">
+    <div class="year">
+        <span>Year</span>
+        <select onchange="changeYear(this);">
+            @foreach (int item in ViewBag.Years)
+            {
+                <option value="@item" @(ViewBag.Year == item?"selected":"")>@item</option>
+            }
+        </select>
+    </div>
+    <div class="week">
+        <span>Week</span>
+        <select onchange="changeWeek(this);">
+            @foreach (KeyValuePair<int, string> item in ViewBag.Weeks)
+            {
+                <option value="@item.Key" @(ViewBag.NthWeek == item.Key?"selected":"")>@item.Value</option>
+            }
+        </select>
+    </div>
+</div>
+
+<div class="schedule">
+    <table class="table table-bordered table-hover table-stripped border-dark">
+        <thead>
+            <tr class="table-primary">
+                <th scope="col" class="table-primary">Slot</th>
+                @foreach (DateTime item in ViewBag.DatesInWeek)
+                {
+                    <th>
+                        @item.ToString("dd/MM")
+                    </th>
+                }
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (KeyValuePair<int, List<RollCallBook>> item in Model)
+            {
+                <tr>
+                    @if (item.Value != null)
+                    {
+                        <td>@item.Key</td>
+                        @foreach (RollCallBook rollCallBook in @item.Value)
+                        {
+                            @if (rollCallBook != null)
+                            {
+                                <td class="">
+                                    <span>@rollCallBook.TeachingSchedule.Course.Subject.SubjectCode</span><br>
+                                    <span>at @rollCallBook.TeachingSchedule.Room.RoomCode</span><br>
+                                    <span>
+                                        @if (rollCallBook.IsAbsent == null)
+                                        {
+                                            <span>(<span class="text-danger">Not Yet</span>)</span>
+                                        }
+                                        else if (!(bool)rollCallBook.IsAbsent)
+                                        {
+                                            <span>(<span class="text-danger">Absent</span>)</span>
+                                        }
+                                        else
+                                        {
+                                            <span>(<span class="text-success">Attend</span>)</span>
+                                        }
+                                    </span>
+                                </td>
+                            }
+                            else
+                            {
+                                <td></td>
+                            }
+                        }
+                    }
+                    else
+                    {
+                        <td></td>
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<div>
+</div>
+<div>
+    <form id="frm" action="/Schedule/Index" method="post">
+        <input type="hidden" name="year" value="@ViewBag.Year" id="year-field"/>
+        <input type="hidden" name="week" value="@ViewBag.NthWeek" id="week-field"/>
+    </form>
+</div>
+<script>
+function changeYear(item){
+    document.getElementById('year-field').value = item.value;
+    document.getElementById('week-field').value = 1;
+    document.getElementById('frm').submit();
+}
+function changeWeek(item){
+    document.getElementById('week-field').value = item.value;
+    document.getElementById('frm').submit();
+}
+</script>
