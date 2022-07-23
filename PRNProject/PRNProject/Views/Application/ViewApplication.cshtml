@@ -53,9 +53,17 @@
                 }
                 else if (ViewBag.PageNumber == ViewBag.TotalPage)
                 {
-                    <li class="page-item"><a class="page-link" href="/Application/ViewApplication/@(ViewBag.TotalPage - 2)">@(ViewBag.TotalPage - 2)</a></li>
-                    <li class="page-item"><a class="page-link" href="/Application/ViewApplication/@(ViewBag.TotalPage - 1)">@(ViewBag.TotalPage - 1)</a></li>
-                    <li class="page-item"><a class="page-link" href="/Application/ViewApplication/@(ViewBag.TotalPage)">@(ViewBag.TotalPage)</a></li>
+                    @if (ViewBag.PageNumber == 2)
+                    {
+                        <li class="page-item"><a class="page-link" href="/Application/ViewApplication/1">1</a></li>
+                        <li class="page-item"><a class="page-link" href="/Application/ViewApplication/2">2</a></li>
+                    }
+                    else
+                    {
+                        <li class="page-item"><a class="page-link" href="/Application/ViewApplication/@(ViewBag.TotalPage - 2)">@(ViewBag.TotalPage - 2)</a></li>
+                        <li class="page-item"><a class="page-link" href="/Application/ViewApplication/@(ViewBag.TotalPage - 1)">@(ViewBag.TotalPage - 1)</a></li>
+                        <li class="page-item"><a class="page-link" href="/Application/ViewApplication/@(ViewBag.TotalPage)">@(ViewBag.TotalPage)</a></li>
+                    }
                 }
                 else
                 {

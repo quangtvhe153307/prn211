@@ -2,15 +2,14 @@
     font-family: fangsong;
 }
 nav.navbar.navbar-expand-lg {
-    background: pink;
     height: 70px;
 }
 footer a {
     text-decoration: none;
-    color: black;
+    color: #fff;
 }
 footer{
-    background: pink;
+    color: #fff;
 }
 .body-left {
     padding: 20px;
@@ -59,7 +58,6 @@ footer{
 }
 
 .body-right h3 {
-    background: yellow;
     width: fit-content;
     height: 40px;
     line-height: 40px;
@@ -67,15 +65,16 @@ footer{
     padding-left: 10px;
     padding-right: 10px;
     position: relative;
-    top: -20px;
+    top: 20px;
     left: 20px;
+    font-weight: bold;
+    font-size: 200%;
 }
 
 .row {
     width: 90%;
     margin-left: auto;
     margin-right: auto;
-    border-top: 1px solid #0000002e;
     padding-top: 20px;
     padding-bottom: 20px;
 }
@@ -90,28 +89,35 @@ footer{
     height: 100%;
 }
 .layout-body-left > div h3 {
-    position: relative;
-    top: -20px;
-    left: 20px;
-    background: red;
     width: fit-content;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius: 3px;
     height: 40px;
     line-height: 40px;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    position: relative;
+    top: 20px;
+    left: 20px;
+    font-weight: bold;
+    font-size: 200%;
 }
-    .layout-body-left a {
-        text-decoration: none;
-        color: black;
-        font-family: fangsong;
-    }
+.layout-body-left a {
+    text-decoration: none;
+    color: black;
+    font-family: fangsong;
+}
 .layout-body-left li{
     margin-top: 5px;
     margin-bottom: 5px;
 }
+li a:hover{
+    text-decoration: underline;
+}
 .layout-body-left ul{
     height: 100%;
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-left: 50px;
 }
 img.img-thumbnail {
     width: 40px;
@@ -119,14 +125,11 @@ img.img-thumbnail {
     padding: 0;
 }
 .account-wrapper{
-    background: pink;
     margin-right: 25px;
 }
 .account-container:hover, .account-wrapper:hover {
-    background: pink !important;
 }
 .btn.dropdown-toggle.account-wrapper {
-    background: red;
     color: white;
 }
 body {
@@ -143,6 +146,7 @@ ul.news-wrapper span {
 .btn-view-news {
     float: right;
     margin-right: 30px;
+    margin-bottom: 10px;
 }
 .breadcrumb-item a{
     text-decoration: none;
@@ -155,4 +159,19 @@ h1.cur-title {
 }
 span.cur-name {
     color: red;
+}
+.row{
+    margin-top: 20px;
+}
+.bg-success a, a.btn.btn-success.btn-view-news{
+    color: #fff !important;
+}
+ul.dropdown-menu.dropdown-menu-lg-end a {
+    color: #000 !important;
+}
+a.navbar-brand {
+    font-size: 250%;
+}
+.row.student-info-wrapper {
+    margin-top: 0;
 }

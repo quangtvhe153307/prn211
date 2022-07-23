@@ -1,10 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using PRNProject.Filter;
 using PRNProject.Logics;
 using PRNProject.Models;
 using System.Collections.Generic;
 
 namespace PRNProject.Controllers
 {
+    [TypeFilter(typeof(Authorize))]
     public class TermController : Controller
     {
         public IActionResult Index()

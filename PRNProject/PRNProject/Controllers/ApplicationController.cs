@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using PRNProject.Filter;
 using PRNProject.Logics;
 using PRNProject.Models;
 using System;
@@ -10,6 +11,7 @@ using System.IO;
 
 namespace PRNProject.Controllers
 {
+    [TypeFilter(typeof(Authorize))]
     public class ApplicationController : Controller
     {
         private IWebHostEnvironment Environment;

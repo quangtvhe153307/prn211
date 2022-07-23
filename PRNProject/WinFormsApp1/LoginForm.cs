@@ -38,17 +38,23 @@ namespace WinFormsApp1
             Account account = accountManager.GetAccount(tbName.Text, tbPass.Text);
             if(account != null)
             {
-                //HomeForm frm = new HomeForm();
-                //frm.ShowDialog();
-                this.Close();
+                HomeForm frm = new HomeForm();
+                frm.Show();
+                frm.Activate();
+                this.Hide();
             }
             else
             {
-                tbMessage.Text = "Your account is invalid";
+                tbMessage.Text = "Username or password is incorrect";
             }
         }
 
         private void LoginForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
         {
 
         }

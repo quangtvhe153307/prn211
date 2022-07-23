@@ -1,11 +1,13 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using PRNProject.Filter;
 using PRNProject.Logics;
 using PRNProject.Models;
 
 namespace PRNProject.Controllers
 {
+    [TypeFilter(typeof(Authorize))]
     public class CuriculumController : Controller
     {
         public IActionResult Index()

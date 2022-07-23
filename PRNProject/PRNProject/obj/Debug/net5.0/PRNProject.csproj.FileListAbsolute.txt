@@ -241,3 +241,4 @@ C:\Users\Admin\Desktop\PRN20220715\prn211\PRNProject\PRNProject\obj\Debug\net5.0
 C:\Users\Admin\Desktop\PRN20220715\prn211\PRNProject\PRNProject\obj\Debug\net5.0\Razor\Views\Application\ViewApplication.cshtml.g.cs
 C:\Users\Admin\Desktop\PRN20220715\prn211\PRNProject\PRNProject\obj\Debug\net5.0\Razor\Views\Schedule\Index.cshtml.g.cs
 C:\Users\Admin\Desktop\PRN20220715\prn211\PRNProject\PRNProject\obj\Debug\net5.0\Razor\Views\Schedule\_ViewStart.cshtml.g.cs
+C:\Users\Admin\Desktop\PRN20220715\prn211\PRNProject\PRNProject\obj\Debug\net5.0\Razor\Views\Error\Error.cshtml.g.cs

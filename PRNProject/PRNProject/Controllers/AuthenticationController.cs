@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using PRNProject.Filter;
 using PRNProject.Logics;
 using PRNProject.Models;
 
@@ -41,6 +42,7 @@ namespace PRNProject.Controllers
                 return RedirectPermanent("~/home/home");
             }
         }
+        [TypeFilter(typeof(Authorize))]
         public IActionResult Logout()
         {
             if(HttpContext.Session.GetString("account") != null)

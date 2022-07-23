@@ -1,12 +1,12 @@
 ﻿@using PRNProject.Models
 @model List<StudentCourse>
 <link href="~/css/StyleStudentGrade.css" rel="stylesheet"/>
-<div class="row">
+<div class="row" style="margin-top:0;">
     <div class="header">
         Grade report for @ViewBag.Name
     </div>
     <div class="body-left col-md-4">
-        <div class="term bg-blue">
+        <div class="term bg-blue bg-success">
             Term
         </div>
         <div class="flex flex-column">
@@ -18,7 +18,7 @@
 </div>
 <div class="body-right col-md-8">
 <table class="table table-bordered table-stripped">
-  <thead>
+  <thead class="table-success">
     <tr>
       <th scope="col">Subject</th>
       <th scope="col">Grade</th>

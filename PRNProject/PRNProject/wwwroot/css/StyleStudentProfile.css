@@ -30,7 +30,8 @@ input#last-name {
     width: 20%;
 }
 #edit-btn, #save-btn, #cancel-btn{
-    margin-left:20px;
+    margin-left:40px;
+    width: 100px;
 }
 #save-btn, #cancel-btn {
     display: none;

@@ -1,6 +1,12 @@
 ﻿@using PRNProject.Models
 @model Dictionary<int, List<RollCallBook>>
 <link href="~/css//StyleSchedule.css" rel="stylesheet" />
+    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/Home/Home">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Weekly schedule</li>
+        </ol>
+    </nav>
 <div class="title">
     Weekly schedule
 </div>
@@ -28,8 +34,8 @@
 <div class="schedule">
     <table class="table table-bordered table-hover table-stripped border-dark">
         <thead>
-            <tr class="table-primary">
-                <th scope="col" class="table-primary">Slot</th>
+            <tr class="table-success">
+                <th scope="col" class="">Slot</th>
                 @foreach (DateTime item in ViewBag.DatesInWeek)
                 {
                     <th>

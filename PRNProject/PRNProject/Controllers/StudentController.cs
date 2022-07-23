@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using PRNProject.Filter;
 using PRNProject.Logics;
 using PRNProject.Models;
 using System.Collections.Generic;
@@ -11,6 +12,7 @@ using System.Linq;
 
 namespace PRNProject.Controllers
 {
+    [TypeFilter(typeof(Authorize))]
     public class StudentController : Controller
     {
         public IActionResult Index()

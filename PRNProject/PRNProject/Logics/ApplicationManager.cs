@@ -37,6 +37,7 @@ namespace PRNProject.Logics
             context.ApplicationTypes.ToList();
             return context.Applications
                 .Where(x => x.StudentId == studentId)
+                .OrderByDescending(x => x.ApplicationId)
                 .Skip((page-1)*pageSize)
                 .Take(pageSize)
                 .ToList();

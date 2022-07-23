@@ -36,6 +36,7 @@
             this.tbPass = new System.Windows.Forms.TextBox();
             this.lbName = new System.Windows.Forms.Label();
             this.tbName = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.pnLogin.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,6 +45,7 @@
             this.pnLogin.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnLogin.Controls.Add(this.label1);
             this.pnLogin.Controls.Add(this.tbMessage);
             this.pnLogin.Controls.Add(this.btExit);
             this.pnLogin.Controls.Add(this.btLogin);
@@ -62,7 +64,7 @@
             this.tbMessage.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbMessage.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.tbMessage.ForeColor = System.Drawing.Color.Red;
-            this.tbMessage.Location = new System.Drawing.Point(57, 45);
+            this.tbMessage.Location = new System.Drawing.Point(57, 178);
             this.tbMessage.Name = "tbMessage";
             this.tbMessage.Size = new System.Drawing.Size(326, 20);
             this.tbMessage.TabIndex = 6;
@@ -122,6 +124,16 @@
             this.tbName.Size = new System.Drawing.Size(225, 27);
             this.tbName.TabIndex = 0;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(57, 34);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(75, 31);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Login";
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -148,5 +160,6 @@
         private System.Windows.Forms.Label lbName;
         private System.Windows.Forms.TextBox tbName;
         private System.Windows.Forms.TextBox tbMessage;
+        private System.Windows.Forms.Label label1;
     }
 }

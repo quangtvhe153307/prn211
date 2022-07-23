@@ -1,53 +1,104 @@
 ﻿@using PRNProject.Models
-<link href="~/css/StyleHome.css" rel="stylesheet"/>
+<link href="~/css/StyleHome.css" rel="stylesheet" />
 
-        <div>
-                <div>
-                    <h3>Academic information</h3>
+<div>
+    <div>
+        <h3>Academic information</h3>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <a class="panel-container" href="/Student/Profile/">
+                <div class="panel">
+                    <div>
+                        <i class="fa-solid fa-address-card"></i>
+                        <span>Profile</span>
+                    </div>
                 </div>
-                <div class="row">
-                <div class="col-md-6">
-                    <h4>Registration/Application</h4>
-                    <ul>
-                        <li><a href="/Application/SendApplication/">Send Appication </a><span>(Gửi đơn)</span></li>
-                        <li><a href="/Application/ViewApplication/1">View Appication </a><span>(Xem đơn)</span></li>
-                    </ul>
+            </a>
+        </div>
+        <div class="col-md-4">
+            <a class="panel-container" href="/Schedule/Index/">
+                <div class="panel">
+                    <div>
+                        <i class="fa-regular fa-calendar-check"></i>
+                        <span>Time Table</span>
+                    </div>
                 </div>
-                <div class="col-md-6">
-                    <h4>Information access</h4>
-                    <ul>
-                        <li><a href="/Schedule/Index/">University timetable </a><span>(Lịch học)</span></li>
-                        <li><a href="">Weekly timetable </a><span>(Thời khóa biểu từng tuần)</span></li>
-                        <li><a href="">University timetable </a><span>Lịch học</span></li>
-                    </ul>
+            </a>
+        </div>
+        <div class="col-md-4">
+            <a class="panel-container" href="/Grade/StudentGrade/">
+                <div class="panel">
+                    <div>
+                        <i class="fa-solid fa-feather-pointed"></i>
+                        <span>Mark Report</span>
+                    </div>
                 </div>
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <a class="panel-container" href="/Application/SendApplication/">
+                <div class="panel">
+                    <div>
+                        <i class="fa-solid fa-envelopes-bulk"></i>
+                        <span>Send Application</span>
+                    </div>
                 </div>
-                <div class="row">
-                                <div class="col-md-6">
-                    <h4>Feedbacks</h4>
-                    <ul>
-                        <li><a href="">Feedback about teaching </a><span>(Báo cáo về việc giảng dạy)</span></li>
-                    </ul>
+            </a>
+        </div>
+        <div class="col-md-4">
+            <a class="panel-container" href="/Application/ViewApplication/1">
+                <div class="panel">
+                    <div>
+                        <i class="fa-solid fa-envelope-open"></i>
+                        <span>View Application</span>
+                    </div>
                 </div>
-                <div class="col-md-6">
-                    <h4>Report</h4>
-                    <ul>
-                        <li><a href="">Attendance report </a><span>(Báo cáo điểm danh)</span></li>
-                        <li><a href="/Grade/StudentGrade">Mark report </a><span>(Báo cáo điểm)</span></li>
-                        <li><a href="/AcademicTranscript/Index">Academic transcript </a><span>(Báo cáo điểm)</span></li>
-                        <li><a href="/Curiculum/StudentCuriculum">Curiculum </a><span>(Khung chương trình)</span></li>
-                    </ul>
+            </a>
+        </div>
+        <div class="col-md-4">
+            <a class="panel-container" href="/AcademicTranscript/Index">
+                <div class="panel">
+                    <div>
+                        <i class="fa-solid fa-address-book"></i>
+                        <span>Academic Transcript</span>
+                    </div>
                 </div>
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <a class="panel-container" href="/Curiculum/StudentCuriculum">
+                <div class="panel">
+                    <div>
+                        <i class="fa-solid fa-school"></i>
+                        <span>Curiculum</span>
+                    </div>
                 </div>
-                <div  class="row">
-                                <div class="col-md-6">
-                    <h4>Other</h4>
-                    <span>@ViewBag.Id</span>
-                    <ul>
-                        <li><a href="/Student/Profile">Student profile </a><span></span></li>
-                        <li><a href="/Term/List">View semeter </a><span>(Xem thông tin về học kỳ)</span></li>
-                        <li><a href="/Room/List">View room </a><span>(Xem thông tin về phòng)</span></li>
-                    </ul>
+            </a>
+        </div>
+        <div class="col-md-4">
+            <a class="panel-container" href="/Term/List">
+                <div class="panel">
+                    <div>
+                        <i class="fa-solid fa-clipboard-list"></i>
+                        <span>Semeter</span>
+                    </div>
                 </div>
-            </div>
-            </div>
+            </a>
+        </div>
+        <div class="col-md-4">
+            <a class="panel-container" href="/Room/List">
+                <div class="panel">
+                    <div>
+                        <i class="fa-solid fa-people-roof"></i>
+                        <span>Room</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

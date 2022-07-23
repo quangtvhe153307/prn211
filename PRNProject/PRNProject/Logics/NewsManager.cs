@@ -38,7 +38,9 @@ namespace PRNProject.Logics
         }
         public List<News> GetNewsByPage(int pageNumber)
         {
-            return context.News.Skip((pageNumber - 1) * PageSize).Take(PageSize).ToList();
+            return context.News
+                .OrderByDescending(x => x.NewsId)
+                .Skip((pageNumber - 1) * PageSize).Take(PageSize).ToList();
         }
         public int CountPageNumber()
         {
