@@ -1,6 +1,6 @@
 ﻿namespace WinFormsApp1
 {
-    partial class HomeForm
+    partial class AdminForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,20 +29,11 @@
         private void InitializeComponent()
         {
             this.pnAccount = new System.Windows.Forms.Panel();
-            this.lbInstructor = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.lbAdmin = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.btLogout = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.pnGrade = new System.Windows.Forms.Panel();
-            this.btSaveGrade = new System.Windows.Forms.Button();
-            this.lbClassGrade = new System.Windows.Forms.ListBox();
-            this.dgvGrade = new System.Windows.Forms.DataGridView();
-            this.pnAttendance = new System.Windows.Forms.Panel();
-            this.btSaveAttend = new System.Windows.Forms.Button();
-            this.lbClassAttendance = new System.Windows.Forms.ListBox();
-            this.dgvAttendance = new System.Windows.Forms.DataGridView();
+            this.pnProfile = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tbMessage = new System.Windows.Forms.TextBox();
             this.btSave = new System.Windows.Forms.Button();
@@ -58,59 +49,38 @@
             this.lbLastName = new System.Windows.Forms.Label();
             this.lbMidName = new System.Windows.Forms.Label();
             this.lbFirstName = new System.Windows.Forms.Label();
-            this.pnProfile = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button2 = new System.Windows.Forms.Button();
             this.pnAccount.SuspendLayout();
-            this.pnGrade.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGrade)).BeginInit();
-            this.pnAttendance.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAttendance)).BeginInit();
-            this.groupBox1.SuspendLayout();
             this.pnProfile.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnAccount
             // 
             this.pnAccount.BackColor = System.Drawing.Color.White;
-            this.pnAccount.Controls.Add(this.lbInstructor);
-            this.pnAccount.Controls.Add(this.button3);
             this.pnAccount.Controls.Add(this.button2);
+            this.pnAccount.Controls.Add(this.lbAdmin);
             this.pnAccount.Controls.Add(this.button1);
             this.pnAccount.Controls.Add(this.btLogout);
             this.pnAccount.Controls.Add(this.textBox1);
             this.pnAccount.Location = new System.Drawing.Point(0, 0);
             this.pnAccount.Name = "pnAccount";
             this.pnAccount.Size = new System.Drawing.Size(280, 600);
-            this.pnAccount.TabIndex = 0;
+            this.pnAccount.TabIndex = 1;
             // 
-            // lbInstructor
+            // lbAdmin
             // 
-            this.lbInstructor.AutoSize = true;
-            this.lbInstructor.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbInstructor.Location = new System.Drawing.Point(12, 8);
-            this.lbInstructor.Name = "lbInstructor";
-            this.lbInstructor.Size = new System.Drawing.Size(157, 41);
-            this.lbInstructor.TabIndex = 6;
-            this.lbInstructor.Text = "Instructor";
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(12, 229);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(258, 59);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "Send Grade";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(12, 164);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(258, 59);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Take attendance";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.lbAdmin.AutoSize = true;
+            this.lbAdmin.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbAdmin.Location = new System.Drawing.Point(12, 8);
+            this.lbAdmin.Name = "lbAdmin";
+            this.lbAdmin.Size = new System.Drawing.Size(112, 41);
+            this.lbAdmin.TabIndex = 6;
+            this.lbAdmin.Text = "Admin";
             // 
             // button1
             // 
@@ -120,7 +90,6 @@
             this.button1.TabIndex = 3;
             this.button1.Text = "Profile";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btLogout
             // 
@@ -130,7 +99,6 @@
             this.btLogout.TabIndex = 2;
             this.btLogout.Text = "Logout";
             this.btLogout.UseVisualStyleBackColor = true;
-            this.btLogout.Click += new System.EventHandler(this.btLogout_Click);
             // 
             // textBox1
             // 
@@ -140,90 +108,14 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(258, 27);
             this.textBox1.TabIndex = 1;
-            this.textBox1.Text = "safsafas";
             // 
-            // pnGrade
+            // pnProfile
             // 
-            this.pnGrade.Controls.Add(this.btSaveGrade);
-            this.pnGrade.Controls.Add(this.lbClassGrade);
-            this.pnGrade.Controls.Add(this.dgvGrade);
-            this.pnGrade.Location = new System.Drawing.Point(1200, 0);
-            this.pnGrade.Name = "pnGrade";
-            this.pnGrade.Size = new System.Drawing.Size(900, 600);
-            this.pnGrade.TabIndex = 6;
-            // 
-            // btSaveGrade
-            // 
-            this.btSaveGrade.Location = new System.Drawing.Point(101, 474);
-            this.btSaveGrade.Name = "btSaveGrade";
-            this.btSaveGrade.Size = new System.Drawing.Size(94, 29);
-            this.btSaveGrade.TabIndex = 2;
-            this.btSaveGrade.Text = "Save";
-            this.btSaveGrade.UseVisualStyleBackColor = true;
-            this.btSaveGrade.Click += new System.EventHandler(this.btSaveGrade_Click);
-            // 
-            // lbClassGrade
-            // 
-            this.lbClassGrade.FormattingEnabled = true;
-            this.lbClassGrade.ItemHeight = 20;
-            this.lbClassGrade.Location = new System.Drawing.Point(45, 72);
-            this.lbClassGrade.Name = "lbClassGrade";
-            this.lbClassGrade.Size = new System.Drawing.Size(150, 104);
-            this.lbClassGrade.TabIndex = 1;
-            this.lbClassGrade.SelectedIndexChanged += new System.EventHandler(this.lbClassGrade_SelectedIndexChanged);
-            // 
-            // dgvGrade
-            // 
-            this.dgvGrade.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvGrade.Location = new System.Drawing.Point(251, 30);
-            this.dgvGrade.Name = "dgvGrade";
-            this.dgvGrade.RowHeadersWidth = 51;
-            this.dgvGrade.RowTemplate.Height = 29;
-            this.dgvGrade.Size = new System.Drawing.Size(629, 510);
-            this.dgvGrade.TabIndex = 0;
-            this.dgvGrade.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvGrade_CellFormatting);
-            // 
-            // pnAttendance
-            // 
-            this.pnAttendance.Controls.Add(this.btSaveAttend);
-            this.pnAttendance.Controls.Add(this.lbClassAttendance);
-            this.pnAttendance.Controls.Add(this.dgvAttendance);
-            this.pnAttendance.Location = new System.Drawing.Point(294, 700);
-            this.pnAttendance.Name = "pnAttendance";
-            this.pnAttendance.Size = new System.Drawing.Size(900, 600);
-            this.pnAttendance.TabIndex = 5;
-            // 
-            // btSaveAttend
-            // 
-            this.btSaveAttend.Location = new System.Drawing.Point(72, 483);
-            this.btSaveAttend.Name = "btSaveAttend";
-            this.btSaveAttend.Size = new System.Drawing.Size(94, 29);
-            this.btSaveAttend.TabIndex = 3;
-            this.btSaveAttend.Text = "Save";
-            this.btSaveAttend.UseVisualStyleBackColor = true;
-            this.btSaveAttend.Click += new System.EventHandler(this.btSaveAttend_Click);
-            // 
-            // lbClassAttendance
-            // 
-            this.lbClassAttendance.FormattingEnabled = true;
-            this.lbClassAttendance.ItemHeight = 20;
-            this.lbClassAttendance.Location = new System.Drawing.Point(45, 72);
-            this.lbClassAttendance.Name = "lbClassAttendance";
-            this.lbClassAttendance.Size = new System.Drawing.Size(150, 104);
-            this.lbClassAttendance.TabIndex = 1;
-            this.lbClassAttendance.SelectedIndexChanged += new System.EventHandler(this.lbClassAttendance_SelectedIndexChanged);
-            this.lbClassAttendance.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.lbClassAttendance_Format);
-            // 
-            // dgvAttendance
-            // 
-            this.dgvAttendance.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAttendance.Location = new System.Drawing.Point(251, 30);
-            this.dgvAttendance.Name = "dgvAttendance";
-            this.dgvAttendance.RowHeadersWidth = 51;
-            this.dgvAttendance.RowTemplate.Height = 29;
-            this.dgvAttendance.Size = new System.Drawing.Size(629, 510);
-            this.dgvAttendance.TabIndex = 0;
-            this.dgvAttendance.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvAttendance_CellFormatting);
+            this.pnProfile.Controls.Add(this.groupBox1);
+            this.pnProfile.Location = new System.Drawing.Point(1254, 7);
+            this.pnProfile.Name = "pnProfile";
+            this.pnProfile.Size = new System.Drawing.Size(900, 600);
+            this.pnProfile.TabIndex = 5;
             // 
             // groupBox1
             // 
@@ -265,7 +157,6 @@
             this.btSave.TabIndex = 12;
             this.btSave.Text = "Save";
             this.btSave.UseVisualStyleBackColor = true;
-            this.btSave.Click += new System.EventHandler(this.btSave_Click);
             // 
             // tbAddress
             // 
@@ -317,7 +208,6 @@
             this.lbAddress.Size = new System.Drawing.Size(62, 20);
             this.lbAddress.TabIndex = 5;
             this.lbAddress.Text = "Address";
-            this.lbAddress.Click += new System.EventHandler(this.label6_Click);
             // 
             // lbEmail
             // 
@@ -364,37 +254,50 @@
             this.lbFirstName.TabIndex = 0;
             this.lbFirstName.Text = "FirstName";
             // 
-            // pnProfile
+            // panel1
             // 
-            this.pnProfile.Controls.Add(this.groupBox1);
-            this.pnProfile.Location = new System.Drawing.Point(1200, 700);
-            this.pnProfile.Name = "pnProfile";
-            this.pnProfile.Size = new System.Drawing.Size(900, 600);
-            this.pnProfile.TabIndex = 4;
+            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Location = new System.Drawing.Point(285, 1);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(900, 600);
+            this.panel1.TabIndex = 6;
             // 
-            // HomeForm
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(37, 51);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 29;
+            this.dataGridView1.Size = new System.Drawing.Size(824, 461);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(12, 176);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(258, 59);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "Application List";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1201, 601);
-            this.Controls.Add(this.pnAttendance);
-            this.Controls.Add(this.pnGrade);
+            this.ClientSize = new System.Drawing.Size(1471, 602);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnProfile);
             this.Controls.Add(this.pnAccount);
-            this.Name = "HomeForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "HomeForm";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.HomeForm_FormClosing);
-            this.Load += new System.EventHandler(this.HomeForm_Load);
+            this.Name = "AdminForm";
+            this.Text = "AdminForm";
             this.pnAccount.ResumeLayout(false);
             this.pnAccount.PerformLayout();
-            this.pnGrade.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGrade)).EndInit();
-            this.pnAttendance.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAttendance)).EndInit();
+            this.pnProfile.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.pnProfile.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -402,17 +305,12 @@
         #endregion
 
         private System.Windows.Forms.Panel pnAccount;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button btLogout;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label lbAdmin;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Panel pnAttendance;
-        private System.Windows.Forms.Panel pnGrade;
-        private System.Windows.Forms.ListBox lbClassGrade;
-        private System.Windows.Forms.DataGridView dgvGrade;
-        private System.Windows.Forms.ListBox lbClassAttendance;
-        private System.Windows.Forms.DataGridView dgvAttendance;
+        private System.Windows.Forms.Button btLogout;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Panel pnProfile;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox tbMessage;
         private System.Windows.Forms.Button btSave;
@@ -428,9 +326,7 @@
         private System.Windows.Forms.Label lbLastName;
         private System.Windows.Forms.Label lbMidName;
         private System.Windows.Forms.Label lbFirstName;
-        private System.Windows.Forms.Panel pnProfile;
-        private System.Windows.Forms.Label lbInstructor;
-        private System.Windows.Forms.Button btSaveGrade;
-        private System.Windows.Forms.Button btSaveAttend;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

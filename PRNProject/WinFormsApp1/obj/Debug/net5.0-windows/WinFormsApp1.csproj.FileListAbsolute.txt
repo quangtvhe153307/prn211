@@ -65,3 +65,5 @@ C:\Users\Admin\Desktop\PRN20220715\prn211\PRNProject\WinFormsApp1\obj\Debug\net5
 C:\Users\Admin\Desktop\PRN20220715\prn211\PRNProject\WinFormsApp1\obj\Debug\net5.0-windows\WinFormsApp1.LoginForm.resources
 C:\Users\Admin\Desktop\PRN20220715\prn211\PRNProject\WinFormsApp1\obj\Debug\net5.0-windows\WinFormsApp1.HomeForm.resources
 C:\Users\Admin\Desktop\PRN20220715\prn211\PRNProject\WinFormsApp1\obj\Debug\net5.0-windows\WinFormsApp1.Properties.Resources.resources
+C:\Users\Admin\Desktop\PRN20220715\prn211\PRNProject\WinFormsApp1\bin\Debug\net5.0-windows\HomeForm.cs
+C:\Users\Admin\Desktop\PRN20220715\prn211\PRNProject\WinFormsApp1\obj\Debug\net5.0-windows\WinFormsApp1.AdminForm.resources

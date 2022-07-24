@@ -29,19 +29,26 @@ namespace WinFormsApp1
 
         private void btExit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Environment.Exit(0);
         }
 
         private void btLogin_Click(object sender, EventArgs e)
         {
             AccountManager accountManager = new();
             Account account = accountManager.GetAccount(tbName.Text, tbPass.Text);
-            if(account != null)
+            if (account != null)
             {
-                HomeForm frm = new HomeForm();
-                frm.Show();
-                frm.Activate();
-                this.Hide();
+                if (account.Role == 2)
+                {
+
+                    HomeForm frm = new HomeForm(account);
+                    frm.Show();
+                    frm.Activate();
+                    this.Hide();
+                } else
+                {
+                    tbMessage.Text = "You don't have permission to access";
+                }
             }
             else
             {
