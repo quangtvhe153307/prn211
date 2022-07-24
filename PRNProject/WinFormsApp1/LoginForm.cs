@@ -45,6 +45,12 @@ namespace WinFormsApp1
                     frm.Show();
                     frm.Activate();
                     this.Hide();
+                } else if(account.Role == 3)
+                {
+                    AdminForm frm = new AdminForm(account);
+                    frm.Show();
+                    frm.Activate();
+                    this.Hide();
                 } else
                 {
                     tbMessage.Text = "You don't have permission to access";
